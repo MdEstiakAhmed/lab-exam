@@ -11,6 +11,7 @@ var admin = require('./controllers/admin/home');
 var customer = require('./controllers/customer/home');
 var logout = require('./controllers/logout');
 var register = require('./controllers/register');
+var viewUser = require('./controllers/admin/viewUser');
 
 //configuration
 app.set('view engine', 'ejs');
@@ -26,6 +27,7 @@ app.use('/logout', logout);
 app.use('/mainHome', home);
 app.use('/admin', admin);
 app.use('/customer', customer);
+app.use('/admin', viewUser);
 
 //server startup
 var serverPort=3000;

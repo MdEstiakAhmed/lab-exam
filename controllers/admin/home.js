@@ -14,4 +14,15 @@ router.get('/home', function(request, response){
 	}
 });
 
+router.get('/viewUser', function(req, res){
+	console.log("show user controllers");
+	userModel.getAll(function(results){
+		if(results.length > 0){
+			res.render('admin/viewUser', {userlist: results});
+		}else{
+			res.redirect('/home');
+		}
+	});
+});
+
 module.exports = router;

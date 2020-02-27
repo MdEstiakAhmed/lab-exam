@@ -13,7 +13,9 @@ module.exports= {
 	},
 	getAll : function(callback){
 		var sql = "select * from user";
-		db.getResults(sql, function(results){
+		db.getResults(sql, null, function(results){
+			console.log("get all sql:",sql);
+			console.log("get all:",results);
 			if(results.length > 0){
 				callback(results);
 			}else{
@@ -64,7 +66,7 @@ module.exports= {
 	},
 	delete : function(user, callback){
 
-		var sql = "Delete from user_details where email=?";
+		var sql = "Delete from user where email=?";
 		db.execute(sql, [user.email], function(status){
 			if(status){
 				callback(true);
