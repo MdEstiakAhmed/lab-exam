@@ -12,6 +12,7 @@ var customer = require('./controllers/customer/home');
 var logout = require('./controllers/logout');
 var register = require('./controllers/register');
 var viewUser = require('./controllers/admin/viewUser');
+var viewProduct = require('./controllers/admin/viewProduct');
 
 //configuration
 app.set('view engine', 'ejs');
@@ -28,6 +29,7 @@ app.use('/mainHome', home);
 app.use('/admin', admin);
 app.use('/customer', customer);
 app.use('/admin', viewUser);
+app.use('/admin', viewProduct);
 
 //server startup
 var serverPort=3000;

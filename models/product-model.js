@@ -1,6 +1,18 @@
 var db = require('./db');
 
 module.exports = {
+	getAll : function(callback){
+		var sql = "select * from product";
+		db.getResults(sql, null, function(results){
+			console.log("get all sql:",sql);
+			console.log("get all:",results);
+			if(results.length > 0){
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
     getByProduct : function(id, callback){
 		var sql = "select * from product where p_category_id = (select p_category_id from product_category where p_category_name = ?)";
 		db.getResults(sql, function(results){
@@ -38,6 +50,17 @@ module.exports = {
 				callback(results);
 			}else{
 				callback(null);
+			}
+		});
+	},
+	delete : function(user, callback){
+
+		var sql = "Delete from product where p_id=?";
+		db.execute(sql, [user.p_id], function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
 			}
 		});
 	}

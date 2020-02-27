@@ -1,5 +1,6 @@
 var express = require('express');
 var userModel = require.main.require('./models/user-model');
+var productModel = require.main.require('./models/product-model');
 var router = express.Router();
 
 
@@ -19,6 +20,17 @@ router.get('/viewUser', function(req, res){
 	userModel.getAll(function(results){
 		if(results.length > 0){
 			res.render('admin/viewUser', {userlist: results});
+		}else{
+			res.redirect('/home');
+		}
+	});
+});
+
+router.get('/viewProduct', function(req, res){
+	console.log("show user controllers");
+	productModel.getAll(function(results){
+		if(results.length > 0){
+			res.render('admin/viewProduct', {userlist: results});
 		}else{
 			res.redirect('/home');
 		}
