@@ -8,5 +8,19 @@
 <body>
     <h1>customer home</h1>
     <a href="/logout">logout</a><br>
+
+    <ul>
+        <li><a href="/customer/showProduct/<%= 'monitor' %>">Monitor</a></li>
+        <ul>
+            <li><a href="/customer/showProduct/<%= 'lcd' %>">LCD</a></li>
+            <ul>
+                <li><a href="/customer/showMonitor/<%= 'dell-lcd-monitor' %>">DELL</a></li>
+            </ul>
+            <li><a href="/customer/showMonitor/<%= 'qhd-monitor' %>">QHD</a></li>
+            <ul>
+                <li><a href="/customer/showMonitor/<%= 'asus-qhd-monitor' %>">ASUS</a></li>
+            </ul>
+        </ul>
+    </ul>
 </body>
 </html>

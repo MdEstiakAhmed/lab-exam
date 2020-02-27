@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show product</title>
+</head>
+<body>
+    <h1>show product</h1>
+
+    <table border="1">
+		<tr>
+			<td>id</td>
+            <td>name</td>
+            <td>price</td>
+			<td>company</td>
+			<td>sub-category</td>
+			<td>category</td>
+		</tr>
+    <% console.log("product in display: ", cat);
+    for(var i=0; i < cat.length; i++){ %>
+		<tr>
+			<td><%= cat[i].p_id %></td>
+			<td><%= cat[i].p_name %></td>
+			<td><%= cat[i].price %></td>
+            <td><%= cat[i].company_id %></td>
+            <td><%= cat[i].p_sub_category_id %></td>
+            <td><%= cat[i].p_category_id %></td>
+			<td>
+				
+			</td>
+		</tr>
+	<%  } %>
+	</table>
+</body>
+</html>
