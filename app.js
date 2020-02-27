@@ -10,6 +10,7 @@ var home = require('./controllers/mainHome');
 var admin = require('./controllers/admin/home');
 var customer = require('./controllers/customer/home');
 var logout = require('./controllers/logout');
+var register = require('./controllers/register');
 
 //configuration
 app.set('view engine', 'ejs');
@@ -20,6 +21,7 @@ app.use('/static', express.static('static'));
 app.use(cookieParser());
 
 app.use('/', index);
+app.use('/register', register);
 app.use('/logout', logout);
 app.use('/mainHome', home);
 app.use('/admin', admin);

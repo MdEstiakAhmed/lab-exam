@@ -43,8 +43,8 @@ module.exports= {
 		});
 	},
 	insert: function(user, callback){
-		var sql = "INSERT INTO user(username, email, password, type, phone_number, gender, birthdate, biography, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		db.execute(sql, [user.username, user.email, user.password, user.type, user.phone_number, user.gender, user.birthdate, user.biography, user.profile_picture], function(status){
+		var sql = "INSERT INTO user(name, email, password, type) VALUES (?, ?, ?, ?)";
+		db.execute(sql, [user.name, user.email, user.password, "user"], function(status){
 			if(status){
 				callback(true);
 			}else{

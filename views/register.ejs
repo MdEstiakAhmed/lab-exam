@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+</head>
+<body>
+    <h1>register page</h1>
+    <a href="/">login page</a>
+    <br><br><br>
+    
+    <form method="post">
+        <table>
+            <tr>
+                <td>name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>email:</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            
+            <% if(userlist != "undefined"){ %>
+            <tr>
+                <td>type:</td>
+                <td><input type="text" readonly name="type" value="user"></td>
+            </tr>
+        <% } %>
+            <tr>
+				<td></td>
+				<td><input type="submit" name="signup" value="signup"></td>
+			</tr>
+        </table>
+    </form>
+
+</body>
+</html>
