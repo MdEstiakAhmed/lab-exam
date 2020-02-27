@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var app = express();
 
 var index = require('./controllers/index');
+var home = require('./controllers/mainHome');
 var admin = require('./controllers/admin/home');
+var customer = require('./controllers/customer/home');
 
 //configuration
 app.set('view engine', 'ejs');
@@ -17,6 +19,7 @@ app.use('/static', express.static('static'));
 app.use(cookieParser());
 
 app.use('/', index);
+app.use('/mainHome', home);
 app.use('/admin', admin);
 
 //server startup

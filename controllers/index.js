@@ -19,7 +19,7 @@ router.post('/', function(request, response){
             response.cookie('loginUser', request.body.email);
             var loginUser = request.cookies['loginUser'];
             console.log('successfull login with ', loginUser);
-            response.redirect('/admin/home');
+            response.redirect('/mainHome');
         }
         else{
 			response.send('invalid username/password');

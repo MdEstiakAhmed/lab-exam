@@ -6,8 +6,8 @@ var router = express.Router();
 router.get('/home', function(request, response){
 	if(request.cookies['loginUser'] != null){
 		userModel.getByEmail(request.cookies['loginUser'], function(result){
-            console.log("admin home controllers");
-			response.render('admin/home', {user: result});
+            console.log("customer home controllers");
+			response.render('customer/home', {user: result});
 		});
 	}else{
 		response.redirect('/');
